@@ -33,13 +33,14 @@ public class Reception extends AppCompatActivity {
             @Override
             public void onResponse(Call<Translation> call, Response<Translation> response) {
                 // 步骤7：处理返回的数据结果
-                response.body().getTranslateResult().get(0).get(0).getTgt();
+                System.out.println(response.body().getTranslateResult().get(0).get(0).getTgt());
             }
 
             //请求失败时回调
             @Override
             public void onFailure(Call<Translation> call, Throwable throwable) {
                 System.out.println("连接失败");
+                System.out.println(throwable.getMessage());
             }
         });
 
